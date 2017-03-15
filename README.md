@@ -1,8 +1,8 @@
 # Docker digdag
 
 ### Overview
-Docker image for (Dockernize) digdag.
-[digdag](http://www.digdag.io/) is a workflow engine.
+Docker image for (Dockernize) digdag.  
+[digdag](http://www.digdag.io/) is a workflow engine.  
 If you want to know about digdag more, please read the [Official Document](https://docs.digdag.io/).
 
 #### Feature
