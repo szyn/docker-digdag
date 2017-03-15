@@ -1,0 +1,6 @@
+#!/bin/bash
+# This shell script wrapper for "docker run" command.
+# You can easy to use szyn/docker-digdag image.
+docker run -it -p 65432:65432 --name docdag \
+--rm -v `pwd`:/src szyn/docker-digdag:latest \
+java -jar /usr/local/bin/digdag $@
