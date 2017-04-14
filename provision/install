@@ -6,7 +6,7 @@ SCRIPT=$(cat << EOF
 # You can easy to use szyn/docker-digdag image.
 set -e
 docker run -it -p 65432:65432 --name docdag \
---rm -v `pwd`:/src szyn/docker-digdag:latest \
+--rm -v \`pwd\`:/src szyn/docker-digdag:latest \
 java -jar /usr/local/bin/digdag \$@
 EOF
 )
