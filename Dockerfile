@@ -1,7 +1,7 @@
 FROM openjdk:8u111-jre-alpine
 LABEL maintainer "szyn"
 
-ENV DIGDAG_VERSION 0.9.6
+ENV DIGDAG_VERSION 0.9.9
 WORKDIR /src
 
 RUN apk add --no-cache \
