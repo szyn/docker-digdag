@@ -1,6 +1,6 @@
 # Docker digdag
-[![Docker Build Status](https://img.shields.io/docker/build/szyn/docker-digdag.svg?style=flat-square)]()
-[![Docker Pulls](https://img.shields.io/docker/pulls/szyn/docker-digdag.svg?style=flat-square)]()
+[![Docker Build Status](https://img.shields.io/docker/build/szyn/docker-digdag.svg?style=flat-square)](https://hub.docker.com/r/szyn/docker-digdag/builds)
+[![Docker Pulls](https://img.shields.io/docker/pulls/szyn/docker-digdag.svg?style=flat-square)](https://hub.docker.com/r/szyn/docker-digdag)
 
 ### Overview
 Docker image for (Dockernize) digdag.  
