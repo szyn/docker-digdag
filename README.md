@@ -9,50 +9,49 @@ If you want to know about digdag more, please read the [Official Document](https
 
 #### Feature
 * Easy to use :)
+* Can use `py>` `rb>` Operators
 
 ### Requirements
 * Docker for Mac / Windows
 
 ### Usage
-You have to install `dogdag` command.
 
-```bash
-$ curl https://raw.githubusercontent.com/szyn/docker-digdag/master/provision/install | sh
-You can now use `docdag` command.
-Run `docdag help` to get started!
+### Getting started
+
 ```
-
-**[Note]**  
-`docdag` command is shell script wrapper for `docker run` command.  
-You can easy to use szyn/docker-digdag image.  
-But if you don't want to install `dogdag` commnad, you can use following command instead of that.
-```bash
-$ docker run -it -p 65432:65432 --name docker-digdag \
---rm -v `pwd`:/src szyn/docker-digdag:latest \
-java -jar /usr/local/bin/digdag <help>
-```
-
-#### Create a New Project
-
-```bash
 $ mkdir /path/to/your/project
 $ cd /path/to/your/project
-$ docdag init <dir>
+
+### Create a new workflow project
+$ docker run -it --rm -v `pwd`:/src docker-digdag:latest init -t ruby hello
+
+$ cd hello
+$ docker run -it --rm -v `pwd`:/src docker-digdag:latest run -a hello.dig
 ```
 
-#### Runs Workflow
+#### Runs workflow
 
-```bash
-$ docdag run <workflow.dig> [+task] [options...]
+```console
+$ docker run -it --rm -v `pwd`:/src \
+  szyn/docker-digdag:latest run <workflow.dig> [+task] [options...]
+
+e.g.
+$ docker run -it --rm -v `pwd`:/src \
+  szyn/docker-digdag:latest run -a workflow.dig
 ```
 
-#### Server Mode
+#### Runs server mode
+
 If you want to try server mode, you can do this :)
 
-```bash
-$ docdag server --memory -b 0.0.0.0
+```console
+$ docker run -it -p 65432:65432 --rm -v `pwd`:/src --name docker-digdag \
+  szyn/docker-digdag:latest server -m -b 0.0.0.0
+
+### If you want to operate server
+$ docker exec -it docker-digdag bash
 ```
 
-Now, you can access to Web UI !  
+You can also access to the Web Interface!  
 Please open following address.  
 http://localhost:65432
