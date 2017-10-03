@@ -19,7 +19,7 @@ If you want to know about digdag more, please read the [Official Document](https
 
 ### Getting started
 
-```
+```bash
 $ mkdir /path/to/your/project
 $ cd /path/to/your/project
 
@@ -32,7 +32,7 @@ $ docker run -it --rm -v `pwd`:/src docker-digdag:latest run -a hello.dig
 
 #### Runs workflow
 
-```console
+```bash
 $ docker run -it --rm -v `pwd`:/src \
   szyn/docker-digdag:latest run <workflow.dig> [+task] [options...]
 
@@ -45,7 +45,7 @@ $ docker run -it --rm -v `pwd`:/src \
 
 If you want to try server mode, you can do this :)
 
-```console
+```bash
 $ docker run -it -p 65432:65432 --rm -v `pwd`:/src --name docker-digdag \
   szyn/docker-digdag:latest server -m -b 0.0.0.0
 
