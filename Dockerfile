@@ -28,4 +28,4 @@ RUN apk add --no-cache \
     echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bash_profile && \
     echo 'export PS1="[\[\e[1;34m\]\u\[\e[00m\]@\[\e[0;32m\]\h\[\e[00m\] \[\e[1;34m\]\W\[\e[00m\]]$ "' >> ~/.bashrc
 
-CMD ["java", "-jar", "/usr/local/bin/digdag"]
+ENTRYPOINT ["java", "-jar", "/usr/local/bin/digdag"]
