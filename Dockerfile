@@ -1,4 +1,4 @@
-FROM openjdk:8u111-jre-alpine
+FROM openjdk:8u131-jre-alpine
 LABEL maintainer "szyn"
 
 ENV DIGDAG_VERSION 0.9.16
