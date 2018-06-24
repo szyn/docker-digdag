@@ -24,21 +24,19 @@ $ mkdir /path/to/your/project
 $ cd /path/to/your/project
 
 ### Create a new workflow project
-$ docker run -it --rm -v `pwd`:/src docker-digdag:latest init -t ruby hello
+$ docker run -it --rm -v `pwd`:/src szyn/docker-digdag:latest init -t ruby hello
 
 $ cd hello
-$ docker run -it --rm -v `pwd`:/src docker-digdag:latest run -a hello.dig
+$ docker run -it --rm -v `pwd`:/src szyn/docker-digdag:latest run -a hello.dig
 ```
 
 #### Runs workflow
 
 ```bash
-$ docker run -it --rm -v `pwd`:/src \
-  szyn/docker-digdag:latest run <workflow.dig> [+task] [options...]
+$ docker run -it --rm -v `pwd`:/src szyn/docker-digdag:latest run <workflow.dig> [+task] [options...]
 
 e.g.
-$ docker run -it --rm -v `pwd`:/src \
-  szyn/docker-digdag:latest run -a workflow.dig
+$ docker run -it --rm -v `pwd`:/src szyn/docker-digdag:latest run -a workflow.dig
 ```
 
 #### Runs server mode
@@ -46,13 +44,12 @@ $ docker run -it --rm -v `pwd`:/src \
 If you want to try server mode, you can do this :)
 
 ```bash
-$ docker run -it -p 65432:65432 --rm -v `pwd`:/src --name docker-digdag \
-  szyn/docker-digdag:latest server -m -b 0.0.0.0
+$ docker run -itd -p 65432:65432 --rm -v `pwd`:/src --name docker-digdag szyn/docker-digdag:latest server -m -b 0.0.0.0
 
 ### If you want to operate server
 $ docker exec -it docker-digdag bash
 ```
 
-You can also access to the Web Interface!  
+You can also access to the Web UI!  
 Please open following address.  
 http://localhost:65432
