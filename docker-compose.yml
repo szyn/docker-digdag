@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  digdag_server:
+    image: szyn/docker-digdag:latest
+    ports:
+      - "65432:65432"
+    depends_on:
+      - postgres
+    volumes:
+      - .:/src
+      - .docker:/opt/etc/digdag
+    command: ["server", "-c", "/opt/etc/digdag/server.properties"]
+  postgres:
+    image: postgres:11.1
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: digdag_db
+      POSTGRES_USER: digdag
+      POSTGRES_PASSWORD: digdag
