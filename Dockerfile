@@ -1,4 +1,4 @@
-FROM openjdk:8u191-jre-alpine
+FROM openjdk:8u212-jre-alpine
 LABEL maintainer "szyn"
 
 ENV DIGDAG_VERSION 0.9.42
@@ -13,15 +13,15 @@ RUN apk add --no-cache \
       glib-dev \
       make \
       openssh \
-      py-pip \
-      python \
-      python-dev \
+      py3-pip \
+      python3 \
+      python3-dev \
       ruby \
       ruby-bundler \
       ruby-dev \
       ruby-json && \
-    pip install --upgrade pip && \
-    pip install python-dateutil && \
+    pip3 install --upgrade pip && \
+    pip3 install python-dateutil && \
     curl -o /usr/local/bin/digdag --create-dirs -L "https://dl.digdag.io/digdag-${DIGDAG_VERSION}" && \
     chmod +x /usr/local/bin/digdag && \
     sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd && \
